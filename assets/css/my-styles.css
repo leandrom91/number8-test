@@ -1,0 +1,21 @@
+/* 
+.ui-datepicker tr { background-color: red; }
+.ui-datepicker tr + tr { background-color: green; }
+.ui-datepicker tr + tr + tr { background-color: blue; }
+.ui-datepicker tr + tr + tr + tr { background-color: red; }
+.ui-datepicker tr + tr + tr + tr + tr { background-color: green; }
+*/
+.ui-datepicker-week-end.ui-datepicker-unselectable.ui-state-disabled span.ui-state-default{
+	background-color: gray;
+	color: gray;
+}
+
+.ui-datepicker-unselectable.ui-state-disabled span.ui-state-default{
+	background-color: gray;
+	color: gray;
+}
+
+.ui-datepicker-week-end a.ui-state-default {
+	background-color: yellow;
+	color : black;
+}

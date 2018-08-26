@@ -5,18 +5,55 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Number8 Test</title>
 	<link rel="stylesheet" href="assets/css/jquery-ui.css">
+	<link rel="stylesheet" href="assets/css/my-styles.css">
 	<script src="assets/js/jquery-1.12.4.js"></script>
 	<script src="assets/js/jquery-ui.js"></script>
 	
 	<script>
+
 		$( function() {
-			$( "#datepicker" ).datepicker();
+
+			$('#process-btn').click(function(){
+
+				let startDate   = $('#datepicker').val();
+				let numberDays  = $('#days_number').val();
+				let countryCode = $('#country_code').val();
+
+				if(!$.trim(startDate)){
+					alert('Please, pick a start date');
+				}
+
+				else if(!$.trim(numberDays)){
+					alert('Please, enter number days');
+				}
+
+				else if(!$.trim(countryCode)){
+					alert('Please, enter country code');
+				}
+
+				else{
+					$('#response').html('it works!!');
+				}
+
+			});
+
+			$( "#datepicker" ).datepicker({
+				dateFormat: 'mm/dd/yy',
+				changeMonth: true,
+				changeYear: true
+			});
+
 		} );
 	</script>
 </head>
 <body>
+	
 	<p>Start Date: <input type="text" id="datepicker"></p>
 	<p>Number of days: <input type="number" id="days_number" min="0"></p>
 	<p>Country Code: <input type="text" id="country_code"></p>
+	<p><button id="process-btn">Process</button></p>
+
+	<br>
+	<div id="response"></div>
 </body>
 </html>
