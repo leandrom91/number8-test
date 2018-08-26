@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Number8 Test</title>
 	<link rel="stylesheet" href="assets/css/jquery-ui.css">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/my-styles.css">
 	<script src="assets/js/jquery-1.12.4.js"></script>
 	<script src="assets/js/jquery-ui.js"></script>
@@ -33,7 +34,7 @@
 
 				else{
 					$('#response').html('');
-					$('#response').html('<div id="datepicker2"></div>');
+					$('#response').html('<label for="result">Result:</label><div id="datepicker2"></div>');
 
 					let date1 = new Date(startDate);
 					let date2 = new Date(date1.getFullYear(), date1.getMonth(), (date1.getDate() + parseInt(numberDays)));
@@ -61,12 +62,40 @@
 </head>
 <body>
 
-	<p>Start Date: <input type="text" id="datepicker"></p>
-	<p>Number of days: <input type="number" id="days_number" min="0"></p>
-	<p>Country Code: <input type="text" id="country_code"></p>
-	<p><button id="process-btn">Process</button></p>
+	<div class="container">
+		
+		<div class="row">
 
-	<br>
-	<div id="response"></div>
+			<div class="col-xs-6">
+				<br>
+
+				<div class="form-group">
+					<label for="datepicker">Start Date:</label>
+					<input type="text" class="form-control" id="datepicker">
+				</div>
+
+				<div class="form-group">
+					<label for="datepicker">Number of days:</label>
+					<input type="number" class="form-control" id="days_number" min="0">
+				</div>
+
+				<div class="form-group">
+					<label for="datepicker">Country Code: </label>
+					<input type="text" class="form-control" id="country_code">
+				</div>
+
+				<button id="process-btn" class="btn btn-default">Process</button>
+
+			</div>		
+
+			<div class="col-xs-6">
+				<br>
+				<div id="response"></div>
+			</div>
+
+		</div>
+
+	</div>
+
 </body>
 </html>
