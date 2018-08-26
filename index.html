@@ -32,7 +32,20 @@
 				}
 
 				else{
-					$('#response').html('it works!!');
+					$('#response').html('');
+					$('#response').html('<div id="datepicker2"></div>');
+
+					let date1 = new Date(startDate);
+					let date2 = new Date(date1.getFullYear(), date1.getMonth(), (date1.getDate() + parseInt(numberDays)));
+					let monthDiff = parseInt(date2.getMonth()) - parseInt(date1.getMonth());
+					
+					$( "#datepicker2" ).datepicker({
+						dateFormat: 'mm/dd/yy',
+						minDate: new Date(date1),
+						maxDate: new Date(date2),
+						numberOfMonths: monthDiff + 1,
+					});
+					
 				}
 
 			});
@@ -47,7 +60,7 @@
 	</script>
 </head>
 <body>
-	
+
 	<p>Start Date: <input type="text" id="datepicker"></p>
 	<p>Number of days: <input type="number" id="days_number" min="0"></p>
 	<p>Country Code: <input type="text" id="country_code"></p>
